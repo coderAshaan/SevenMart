@@ -15,6 +15,7 @@ private int count = 0;
 public boolean retry(final ITestResult iTestResult) {
 if (!iTestResult.isSuccess()) {
 if (this.count < maxTry) {
+// Added comment
 LOG.info("Retrying test " + iTestResult.getName() + " with status "
 + getResultStatusName(iTestResult.getStatus()) + " for the " + (this.count + 1) + " time(s).");
 this.count++;
