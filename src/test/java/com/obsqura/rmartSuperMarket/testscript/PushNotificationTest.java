@@ -13,7 +13,7 @@ import utilities.ExcelUtility;
 public class PushNotificationTest extends Base
 {
 	@Test
-	public void verifyWhetherUserAbleToSendTheNotification()
+	public void isUserAbleToSendTheNotification()
 	{
 		String userName = ExcelUtility.getString(1, 0,"LoginPage");
 		String password = ExcelUtility.getString(1, 0,"LoginPage");

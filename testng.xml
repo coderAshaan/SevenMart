@@ -11,7 +11,7 @@
      <classes>
         <class name="com.obsqura.rmartSuperMarket.testscript.PushNotificationTest"> 
            <methods>
-                <include name="verifyWhetherUserAbleToSendTheNotification">
+                <include name="isUserAbleToSendTheNotification">
 				</include>
 		   </methods>
         </class>

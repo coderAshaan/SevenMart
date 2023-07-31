@@ -12,7 +12,7 @@ public class ManageCategoryTest extends Base
 	@Test
 	public void verifyWhetherTheUserAbleToAddValuesInManageCategory()
 	{
-		String userName = ExcelUtility.getString(1, 0,"LoginPage");
+		String userName = ExcelUtility.getString(1, 5,"LoginPage");
 		String password = ExcelUtility.getString(1, 0,"LoginPage");
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUsernameOnUsernameField(userName).enterPasswrodOnPasswrodField(password).clickOnSignInButton();

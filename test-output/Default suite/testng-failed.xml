@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.obsqura.rmartSuperMarket.ManageSliderTest">
+      <class name="com.obsqura.rmartSuperMarket.testscript.LoginTest">
         <methods>
-          <include name="initializeBrowser"/>
+          <include name="verifyTheUserAbleToLoginWithValidCredentials"/>
+          <include name="verifyTheUserCannotLoginWithInvalidUserNameandValidPassword"/>
           <include name="browserQuit"/>
-          <include name="verifyWhetherTheUserAbleToUploadFile"/>
+          <include name="verifyTheUserCannotLoginWithInvalidUserNameandInvalidPassword"/>
+          <include name="verifyTheUserCannotLoginWithValidUserNameandInvalidPassword"/>
+          <include name="initializeBrowser"/>
         </methods>
-      </class> <!-- com.obsqura.rmartSuperMarket.ManageSliderTest -->
+      </class> <!-- com.obsqura.rmartSuperMarket.testscript.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

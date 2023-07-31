@@ -2,20 +2,24 @@ package com.obsqura.rmartSuperMarket.testscript;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.GeneralUtility;
+import utilities.ScreenShotUtility;
 import utilities.WaitUtility;
 
 public class Base {
 	public WebDriver driver;
 	public Properties prop;
 	public FileInputStream fs;
+	public ScreenShotUtility scrshot;
 	
 	@BeforeMethod
 	@Parameters("browser")
@@ -54,10 +58,16 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
 	}
 	
-	@AfterMethod
-	public void browserQuit()
-	{
-		driver.quit();
+	@AfterMethod(alwaysRun = true)
+	public void browserQuit(ITestResult iTestResult) throws IOException {
+	if (iTestResult.getStatus() == ITestResult.FAILURE) {
+	scrshot = new ScreenShotUtility();
+	scrshot.getScreenShot(driver, iTestResult.getName());
 	}
+
+	driver.quit();
+	}
+
+
 
 }
